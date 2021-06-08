@@ -17,9 +17,12 @@ class App extends Component {
         <h3>Let's develop management system!!!</h3> 
         <h3>Let's develop management system!!!</h3> 
         <h3>Let's develop management system!!!</h3> 
+        <h3>Let's develop management system!!!</h3> 
+        <h3>Let's develop management system!!!</h3> 
       </div>
     );
   }
 }
 
 export default App;
+
