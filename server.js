@@ -1,15 +1,13 @@
-let express = require('express');
-let app = express();
-let router = require('./router/main')(app);
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = process.env.PORT || 5000;
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extenede: true}));
 
-
-let server = app.listen(3000, () => {
-    console.log("Express servr has started on port 3000");''
+app.get('/api/hello', (req, res) => {
+    res.send({message : 'Hello Express!'});
 });
 
-
-app.use(express.static('public'));
+app.listen(port, () => console.log(`Listening on port ${port}`));
