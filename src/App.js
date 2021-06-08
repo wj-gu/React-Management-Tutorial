@@ -9,6 +9,8 @@ class App extends Component {
         <img src={logo} lat="logo" />
         <h2>Let's develop management system!</h2> 
         <h3>Let's develop management system!!!</h3> 
+        <h3>Let's develop management system!!!</h3> 
+        <h3>Let's develop management system!!!</h3> 
       </div>
     );
   }
