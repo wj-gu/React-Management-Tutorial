@@ -13,15 +13,15 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = theme => ({
   root : {
     width: '100%',
-
-    marginTop: theme.spacing.unit *3,
+    marginTop: theme.spacing(3),
     overflowX : "auto"
   },
   table: {
     minWidth : 1080
   },
   progress : {
-    margin: theme.spacing.unit * 2
+    //margin: theme.spacing.unit * 2
+    margin : theme.spacing(2)
   }
 })
 
@@ -45,18 +45,18 @@ class App extends Component {
      this.callApi()
      .then(res => this.setState({customers: res}))
      .catch(err => console.log(err));
-     
   }
  
   callApi = async () => {
     const response = await fetch('/api/customers');
     const body = await response.json();
+
     return body;
   }
 
   progress = () => {
     const {completed} = this.state;
-    this.setState({ completed: completed >= 100 ? 0 : completed + 1})
+    this.setState({ completed: completed >= 100 ? 0 : completed + 1});
   }
 
   render(){
@@ -90,7 +90,7 @@ class App extends Component {
                 );
               }) : 
               <TableRow>
-                <TableCell colspan = "6" align="center">
+                <TableCell colSpan = "6" align="center">
                   <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed} />
                 </TableCell>
               </TableRow>
